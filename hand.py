@@ -10,7 +10,7 @@ classes = ['A', 'B', 'C', 'D', 'del', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 
 model=load_model(model_save)
 
-def predition(img):
+def prediction(img):
     img=cv.resize(img, (48,48))
     img=img.astype('float32')/255
     pred=model.predict(img)
