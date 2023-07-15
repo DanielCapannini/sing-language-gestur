@@ -37,7 +37,6 @@ def proces(img):
             img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
             img_rect = cv.rectangle(img, (center[0] - 120, center[1] - 120), (center[0] + 120, center[1] + 120), (0, 255, 0), 2)
             img[center[1]-130:center[1]+130, center[0]-130:center[0]+130]
-            img=cv.resize(img, (48,48))
         return True, img, img_rect
     else:
         return False, img, img
