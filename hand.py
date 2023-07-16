@@ -23,6 +23,7 @@ hands = mp_hands.Hands(
 def prediction(img):
     img=cv.resize(img, (48,48))
     img=img.astype('float32')/255
+    img = np.expand_dims(img, axis=0)
     pred=model.predict(img)
     return classes[np.argmax(pred)], pred
 
@@ -47,5 +48,7 @@ while True:
     ret, frame=webcam.read()
     if not ret:
         break
-
+    check, img_p, img_r=proces(frame)
+    if check:
+        class_model, predit=prediction(img_p)
     
